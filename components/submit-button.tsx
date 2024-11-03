@@ -6,14 +6,15 @@ import { Button } from './ui/button'
 
 export function SubmitButton(props: {
   form: string
+  disabled: boolean
 }) {
-  const { form } = props
+  const { form, disabled } = props
 
   const { pending } = useFormStatus()
 
 
   return (
-    <Button disabled={pending} type="submit" variant="default" form={form}>
+    <Button disabled={pending || disabled} type="submit" variant="default" form={form}>
       {pending ? "Pending" : "Submit"}
     </Button>
   )

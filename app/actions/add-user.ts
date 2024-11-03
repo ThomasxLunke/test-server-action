@@ -1,17 +1,10 @@
 "use server"
 
-import { z } from "zod"
-
-
-const schema = z.object({
-  first_name:  z.string().min(15,"Min lenght = 15"),
-  last_name: z.string(),
-  email: z.string().email(),
-})
+import { schema_add_user } from "@/lib/schema"
 
 export default async function createUser(prevState:unknown,formData: FormData) {
 
-  const validatedFields = schema.safeParse({
+  const validatedFields = schema_add_user.safeParse({
     first_name: formData.get('first_name'),
     last_name: formData.get('last_name'),
     email: formData.get('email')
