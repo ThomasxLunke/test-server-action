@@ -40,7 +40,6 @@ export default function RootLayout({
           <div className="p-10">
             {children}
           </div>
-
         </ThemeProvider>
       </body>
     </html>
