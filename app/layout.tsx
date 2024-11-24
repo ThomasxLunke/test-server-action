@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} h-[100vh] antialiased flex items-center justify-center`}
+        className={`${geistSans.variable} ${geistMono.variable} h-[100vh] antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,7 +37,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <div className="p-10">
+            {children}
+          </div>
 
         </ThemeProvider>
       </body>
