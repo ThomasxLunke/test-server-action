@@ -3,19 +3,21 @@
 
 import { useFormStatus } from 'react-dom'
 import { Button } from './ui/button'
+import { LoaderIcon } from 'lucide-react'
 
 export function SubmitButton(props: {
   form: string
-  disabled: boolean
+  disabled?: boolean
 }) {
-  const { form, disabled } = props
+  const { form, disabled = false } = props
 
   const { pending } = useFormStatus()
 
 
   return (
     <Button disabled={pending || disabled} type="submit" variant="default" form={form}>
-      {pending ? "Pending" : "Submit"}
+      {pending ? <LoaderIcon className="animate-spin" />
+        : "Submit"}
     </Button>
   )
 }

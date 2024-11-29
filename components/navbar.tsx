@@ -11,7 +11,6 @@ export default function Navbar() {
   return (
     <div className="w-full flex  items-center p-4 border-b justify-between">
       <BreadCrumb />
-
       {
         pathname === "/form-action" && <h1 className='font-bold lg:inline-block'>Form action example</h1>
       }
